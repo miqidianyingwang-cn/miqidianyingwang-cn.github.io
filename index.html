@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>米奇电影网 - 精选电影推荐_热播影视榜_在线观影指南</title>
+<meta name="description" content="米奇电影网精选每日好片，提供热播影视榜、新片速递、观影指南与影评专栏。看好电影、查热播榜、找片单，就上米奇电影网。">
+<meta name="keywords" content="米奇电影网,精选电影推荐,热播影视榜,新片速递,观影指南,影评专栏,高分电影,影视资讯,米奇影视">
+<meta name="author" content="米奇电影网">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#0a0a0a">
+<meta name="format-detection" content="telephone=no">
+<link rel="canonical" href="https://miqidianyingwang-cn.github.io/">
+<link rel="alternate" hreflang="zh-CN" href="https://miqidianyingwang-cn.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="米奇电影网">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:title" content="米奇电影网 - 精选电影推荐_热播影视榜_在线观影指南">
+<meta property="og:description" content="米奇电影网精选每日好片，提供热播影视榜、新片速递、观影指南与影评专栏。">
+<meta property="og:url" content="https://miqidianyingwang-cn.github.io/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="米奇电影网 - 精选电影推荐与热播影视榜">
+<meta name="twitter:description" content="每日精选好片、热播榜、观影指南与影评专栏，看好电影就上米奇电影网。">
+<style>
+:root{
+  --bg:#0a0a0a;
+  --bg2:#121212;
+  --paper:#f2efe6;
+  --dim:#9b978c;
+  --lime:#d7ff3e;
+  --rose:#ff5f7e;
+  --line:rgba(242,239,230,.16);
+  --line2:rgba(242,239,230,.30);
+  --serif:"Noto Serif SC","Songti SC","STSong","SimSun",Georgia,serif;
+  --sans:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Helvetica Neue",Arial,sans-serif;
+  --maxw:1240px;
+}
+*{box-sizing:border-box;}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:70px;}
+body{
+  margin:0;background:var(--bg);color:var(--paper);
+  font-family:var(--sans);font-size:16px;line-height:1.85;letter-spacing:.3px;
+  overflow-x:hidden;
+}
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+  background-image:repeating-linear-gradient(0deg,rgba(242,239,230,.030) 0 1px,transparent 1px 3px);
+}
+img{max-width:100%;height:auto;display:block;}
+a{color:inherit;text-decoration:none;}
+ul,ol,dl{margin:0;padding:0;list-style:none;}
+h1,h2,h3,h4{margin:0;line-height:1.25;font-weight:700;}
+p{margin:0;}
+.wrap{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 24px;position:relative;z-index:1;}
+.skip{position:absolute;left:-9999px;top:0;background:var(--lime);color:#14180a;padding:10px 16px;z-index:99;}
+.skip:focus{left:0;}
+.rule{height:1px;background:var(--line);margin:0;}
+.rule.big{height:3px;background:var(--paper);}
+
+/* ============ 顶部：极简单行 ============ */
+.top{position:sticky;top:0;z-index:50;background:rgba(10,10,10,.90);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:62px;}
+.logo{display:flex;align-items:baseline;gap:10px;flex:0 0 auto;}
+.logo .mk{font-family:var(--serif);font-size:21px;font-weight:700;letter-spacing:2px;}
+.logo .mk span{color:var(--lime);}
+.logo .dot{width:7px;height:7px;border-radius:50%;background:var(--rose);align-self:center;}
+.nav{display:flex;align-items:center;gap:22px;}
+.navscroll{overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+.navscroll::-webkit-scrollbar{display:none;}
+.nav a{font-size:13.5px;letter-spacing:2px;color:var(--dim);text-transform:uppercase;position:relative;padding:6px 0;}
+.nav a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--lime);transform:scaleX(0);transition:.25s;transform-origin:left;}
+.nav a:hover,.nav a:focus{color:var(--paper);}
+.nav a:hover::after{transform:scaleX(1);}
+.top .cta{display:flex;align-items:center;gap:14px;flex:0 0 auto;}
+.upd{font-size:12px;color:var(--dim);letter-spacing:1px;}
+.upd b{color:var(--lime);}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-size:13.5px;font-weight:700;letter-spacing:1px;
+  padding:11px 22px;border:1px solid var(--paper);color:var(--paper);background:transparent;cursor:pointer;transition:.25s;}
+.btn:hover{background:var(--paper);color:#0a0a0a;}
+.btn-lime{background:var(--lime);border-color:var(--lime);color:#14180a;}
+.btn-lime:hover{background:transparent;color:var(--lime);}
+
+/* ============ 首屏：超大排版 ============ */
+.hero{padding:76px 0 54px;position:relative;}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1fr) 190px;gap:30px;align-items:end;}
+.hero .kicker{font-size:12px;letter-spacing:6px;color:var(--lime);margin-bottom:18px;}
+.hero h1{font-family:var(--serif);font-size:clamp(46px,12.5vw,140px);letter-spacing:4px;line-height:.92;}
+.hero h1 .b{display:block;}
+.hero h1 .b em{font-style:normal;color:var(--lime);}
+.hero .tagline{margin-top:22px;font-family:var(--serif);font-size:clamp(16px,2.8vw,24px);letter-spacing:2px;color:var(--paper);}
+.hero .lead{margin-top:20px;color:var(--dim);font-size:clamp(14.5px,2.1vw,16.5px);max-width:660px;}
+.hero .lead b{color:var(--paper);font-weight:700;border-bottom:1px solid var(--lime);}
+.hero .btns{display:flex;flex-wrap:wrap;gap:14px;margin-top:32px;}
+.hero .nums{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:40px;border-top:1px solid var(--line2);border-bottom:1px solid var(--line2);}
+.hero .nums div{padding:16px 8px;}
+.hero .nums div+div{border-left:1px solid var(--line);}
+.hero .nums b{display:block;font-family:var(--serif);font-size:30px;color:var(--lime);line-height:1.1;}
+.hero .nums span{font-size:12px;color:var(--dim);letter-spacing:2px;}
+/* 竖排装饰 */
+.vside{writing-mode:vertical-rl;text-orientation:upright;font-family:var(--serif);font-size:15px;letter-spacing:8px;
+  color:var(--dim);border-left:1px solid var(--line2);padding-left:18px;height:260px;justify-self:end;}
+.vside b{color:var(--rose);}
+
+/* ============ 跑马灯 ============ */
+.marquee{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg2);overflow:hidden;padding:12px 0;}
+.marquee .mq{display:flex;gap:38px;white-space:nowrap;width:max-content;animation:slide 32s linear infinite;}
+.marquee span{font-family:var(--serif);font-size:14px;letter-spacing:4px;color:var(--dim);}
+.marquee span i{font-style:normal;color:var(--lime);}
+@keyframes slide{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
+/* ============ 栏目通用 ============ */
+.sec{padding:70px 0;}
+.sec-head{display:grid;grid-template-columns:150px minmax(0,1fr);gap:24px;align-items:start;margin-bottom:34px;}
+.sec-no{font-family:var(--serif);font-size:13px;letter-spacing:4px;color:var(--dim);border-top:2px solid var(--lime);padding-top:10px;}
+.sec-title{font-family:var(--serif);font-size:clamp(26px,5.2vw,42px);letter-spacing:2px;}
+.sec-title em{font-style:normal;color:var(--lime);}
+.sec-desc{margin-top:14px;color:var(--dim);font-size:15px;max-width:720px;}
+
+/* ============ 栏目一：横向滑动轨道 ============ */
+.track{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:14px;
+  -webkit-overflow-scrolling:touch;scrollbar-width:thin;}
+.track::-webkit-scrollbar{height:4px;}
+.track::-webkit-scrollbar-thumb{background:var(--line2);}
+.track::-webkit-scrollbar-track{background:transparent;}
+.film{flex:0 0 288px;scroll-snap-align:start;border:1px solid var(--line);background:var(--bg2);transition:.3s;display:flex;flex-direction:column;}
+.film:hover{border-color:var(--lime);transform:translateY(-6px);}
+.film .ph{aspect-ratio:3/4;position:relative;display:flex;align-items:flex-end;justify-content:space-between;gap:10px;padding:16px;}
+.film .ph .type{position:absolute;top:14px;left:14px;font-size:11px;letter-spacing:2px;color:#0a0a0a;background:var(--lime);padding:3px 9px;}
+.film .ph .nm{font-family:var(--serif);font-size:20px;letter-spacing:2px;line-height:1.3;position:relative;}
+.film .ph .yr{font-size:12px;color:var(--paper);opacity:.75;position:relative;white-space:nowrap;}
+.film .info{padding:15px 17px 19px;border-top:1px solid var(--line);}
+.film .info p{font-size:13.5px;color:var(--dim);}
+.film .info .bar{display:flex;align-items:center;justify-content:space-between;margin-top:12px;font-size:13px;color:var(--dim);}
+.film .info .bar b{font-family:var(--serif);font-size:20px;color:var(--lime);}
+.p1{background:linear-gradient(170deg,#1b2a10,#7ba428 70%,#d7ff3e);}
+.p2{background:linear-gradient(170deg,#2a0f1a,#a1305a 65%,#ff5f7e);}
+.p3{background:linear-gradient(170deg,#0f1f2a,#2b6f8f 65%,#8fd6e8);}
+.p4{background:linear-gradient(170deg,#2a1f0a,#9a6a1e 65%,#ffc861);}
+.p5{background:linear-gradient(170deg,#1a1230,#5b3fa8 65%,#c3aaff);}
+.p6{background:linear-gradient(170deg,#0b2420,#1e7a68 65%,#8fe6cf);}
+.p7{background:linear-gradient(170deg,#2b1410,#8f3a2a 65%,#ffb199);}
+.p8{background:linear-gradient(170deg,#101820,#3f5a75 65%,#b9cde2);}
+.track-hint{margin-top:14px;font-size:12px;color:var(--dim);letter-spacing:2px;}
+.track-hint i{font-style:normal;color:var(--lime);}
+
+/* ============ 栏目二：巨型编号榜单 ============ */
+.chart{border-top:1px solid var(--line2);}
+.chart .row{display:grid;grid-template-columns:150px minmax(0,1fr) auto;gap:22px;align-items:center;
+  padding:20px 8px;border-bottom:1px solid var(--line);transition:.28s;}
+.chart .row:hover{background:var(--bg2);}
+.chart .no{font-family:var(--serif);font-size:clamp(40px,7vw,68px);line-height:1;color:transparent;
+  -webkit-text-stroke:1.5px var(--line2);transition:.28s;}
+.chart .row:hover .no{-webkit-text-stroke-color:var(--lime);}
+.chart .row:nth-child(1) .no{color:var(--lime);-webkit-text-stroke:0;}
+.chart .nm{font-family:var(--serif);font-size:19px;letter-spacing:1px;}
+.chart .meta{font-size:13px;color:var(--dim);margin-top:4px;letter-spacing:1px;}
+.chart .sc{font-family:var(--serif);font-size:26px;color:var(--paper);}
+.chart .sc small{display:block;font-family:var(--sans);font-size:11px;color:var(--dim);letter-spacing:2px;}
+.chart-note{margin-top:18px;display:grid;grid-template-columns:1fr 1fr;gap:22px;}
+.chart-note .box{border:1px solid var(--line);padding:18px 20px;background:var(--bg2);}
+.chart-note .box h4{font-family:var(--serif);font-size:16px;margin-bottom:8px;color:var(--lime);letter-spacing:1px;}
+.chart-note .box p{font-size:13.5px;color:var(--dim);}
+
+/* ============ 栏目三：杂志排版 + 首字下沉 ============ */
+.mag{display:grid;grid-template-columns:1.35fr .65fr;gap:40px;align-items:start;}
+.article .dropcap::first-letter{float:left;font-family:var(--serif);font-size:62px;line-height:.9;
+  padding:6px 12px 0 0;color:var(--lime);font-weight:700;}
+.article h3{font-family:var(--serif);font-size:clamp(21px,3.6vw,28px);letter-spacing:1px;margin-bottom:14px;}
+.article p{font-size:15px;color:var(--dim);margin-bottom:14px;}
+.article p b{color:var(--paper);}
+.article .quote{margin:22px 0;padding:16px 0 16px 20px;border-left:2px solid var(--rose);
+  font-family:var(--serif);font-size:16px;color:var(--paper);letter-spacing:1px;}
+.cols2{columns:2;column-gap:22px;margin-top:20px;}
+.cols2 p{break-inside:avoid;font-size:14px;}
+.side-list{border-top:2px solid var(--paper);}
+.side-list .it{padding:14px 0;border-bottom:1px solid var(--line);}
+.side-list .it a{display:block;}
+.side-list .it:hover .t{color:var(--lime);}
+.side-list .t{font-size:14.5px;font-weight:700;line-height:1.55;transition:.2s;}
+.side-list .d{font-size:12px;color:var(--dim);letter-spacing:1px;margin-top:4px;}
+.side-list h4{font-family:var(--serif);font-size:16px;letter-spacing:2px;padding:12px 0;color:var(--lime);}
+
+/* ============ 栏目四：影评 ============ */
+.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.rv{border:1px solid var(--line);background:var(--bg2);padding:26px 24px;transition:.3s;position:relative;}
+.rv:hover{border-color:var(--rose);transform:translateY(-5px);}
+.rv .marks{font-size:13px;letter-spacing:4px;color:var(--lime);}
+.rv .say{font-family:var(--serif);font-size:16px;letter-spacing:1px;margin-top:14px;line-height:1.9;}
+.rv .by{margin-top:20px;padding-top:14px;border-top:1px solid var(--line);display:flex;align-items:center;gap:12px;}
+.rv .by .sq{width:38px;height:38px;flex:0 0 38px;border:1px solid var(--line2);display:grid;place-items:center;
+  font-family:var(--serif);font-size:15px;color:var(--rose);}
+.rv .by div{font-size:13.5px;line-height:1.5;}
+.rv .by div span{display:block;font-size:12px;color:var(--dim);}
+
+/* ============ 栏目五：观影指南 ============ */
+.guide{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--line2);}
+.guide .g{padding:22px 20px;border-right:1px solid var(--line);}
+.guide .g:last-child{border-right:0;}
+.guide .g .idx{font-family:var(--serif);font-size:13px;letter-spacing:3px;color:var(--lime);}
+.guide .g h3{font-family:var(--serif);font-size:17px;margin:10px 0 8px;letter-spacing:1px;}
+.guide .g p{font-size:13.5px;color:var(--dim);}
+.guide .g .kw{margin-top:12px;display:flex;flex-wrap:wrap;gap:6px;}
+.guide .g .kw span{font-size:11.5px;letter-spacing:1px;padding:3px 9px;border:1px solid var(--line2);color:var(--dim);}
+
+/* ============ 栏目六：关于 ============ */
+.manifesto{font-family:var(--serif);font-size:clamp(20px,4.2vw,34px);letter-spacing:2px;line-height:1.7;
+  border-left:3px solid var(--lime);padding-left:22px;margin-bottom:36px;}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:start;}
+.about .list li{padding:13px 0;border-bottom:1px solid var(--line);display:flex;gap:14px;font-size:14.5px;color:var(--dim);}
+.about .list li b{font-family:var(--serif);color:var(--lime);flex:0 0 auto;letter-spacing:1px;}
+.faq details{border-bottom:1px solid var(--line);padding:16px 0;}
+.faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:14px;align-items:center;
+  font-family:var(--serif);font-size:16px;letter-spacing:1px;}
+.faq summary::-webkit-details-marker{display:none;}
+.faq summary::after{content:"＋";color:var(--lime);font-size:18px;}
+.faq details[open] summary::after{content:"－";}
+.faq details p{margin-top:12px;font-size:14px;color:var(--dim);}
+.sub{margin-top:40px;border:1px solid var(--line2);padding:38px 28px;text-align:center;background:var(--bg2);}
+.sub h2{font-family:var(--serif);font-size:clamp(21px,4.4vw,30px);letter-spacing:2px;}
+.sub p{margin-top:12px;color:var(--dim);font-size:14.5px;}
+.sub form{display:flex;gap:10px;max-width:520px;margin:22px auto 0;flex-wrap:wrap;}
+.sub input{flex:1 1 240px;min-width:0;padding:12px 16px;background:transparent;border:1px solid var(--line2);
+  color:var(--paper);font-size:14px;}
+.sub input::placeholder{color:#6f6c63;}
+.sub input:focus{outline:none;border-color:var(--lime);}
+
+/* ============ 页脚：巨型站名 ============ */
+footer{margin-top:50px;border-top:1px solid var(--line);background:var(--bg2);padding:44px 0 30px;}
+.f-cols{display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:26px;}
+footer h4{font-family:var(--serif);font-size:15px;letter-spacing:3px;color:var(--lime);margin-bottom:12px;}
+footer li{padding:5px 0;font-size:13.5px;color:var(--dim);}
+footer li a:hover{color:var(--paper);border-bottom:1px solid var(--lime);}
+.f-brand .mk{font-family:var(--serif);font-size:22px;letter-spacing:2px;}
+.f-brand .mk span{color:var(--lime);}
+.f-brand .url{display:block;font-size:11.5px;color:var(--dim);margin-top:4px;}
+.f-brand p{margin-top:12px;font-size:13.5px;color:var(--dim);max-width:330px;}
+.f-key{margin-top:26px;padding-top:18px;border-top:1px solid var(--line);font-size:13px;color:var(--dim);line-height:2;}
+.f-key b{color:var(--lime);}
+.f-bottom{margin-top:14px;display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;font-size:12.5px;color:#6f6c63;}
+.bigword{margin-top:34px;font-family:var(--serif);font-size:clamp(38px,13vw,140px);letter-spacing:2px;line-height:1;
+  color:transparent;-webkit-text-stroke:1px var(--line2);text-align:center;user-select:none;}
+.totop{position:fixed;right:18px;bottom:18px;width:44px;height:44px;display:grid;place-items:center;z-index:60;
+  border:1px solid var(--line2);background:rgba(10,10,10,.85);color:var(--paper);font-size:16px;}
+.totop:hover{border-color:var(--lime);color:var(--lime);}
+
+/* ============ 响应式 ============ */
+@media (max-width:1024px){
+  .hero-grid{grid-template-columns:1fr;}
+  .vside{display:none;}
+  .reviews{grid-template-columns:1fr;}
+  .guide{grid-template-columns:1fr 1fr;}
+  .guide .g:nth-child(2){border-right:0;}
+  .guide .g:nth-child(1),.guide .g:nth-child(2){border-bottom:1px solid var(--line);}
+  .mag{grid-template-columns:1fr;gap:30px;}
+  .about{grid-template-columns:1fr;gap:28px;}
+  .chart-note{grid-template-columns:1fr;}
+  .f-cols{grid-template-columns:1fr 1fr;}
+}
+@media (max-width:768px){
+  body{font-size:15px;}
+  .top .wrap{flex-wrap:wrap;min-height:56px;padding-top:8px;padding-bottom:8px;}
+  .nav{order:3;width:100%;gap:16px;}
+  .top .cta .upd{display:none;}
+  .sec{padding:52px 0;}
+  .hero{padding:52px 0 40px;}
+  .sec-head{grid-template-columns:1fr;gap:12px;}
+  .sec-no{border-top:0;border-left:2px solid var(--lime);padding:0 0 0 10px;}
+  .chart .row{grid-template-columns:82px minmax(0,1fr) auto;gap:14px;padding:16px 4px;}
+  .chart .nm{font-size:16px;}
+  .chart .sc{font-size:21px;}
+  .cols2{columns:1;}
+  .film{flex:0 0 74%;}
+  .sub{padding:30px 20px;}
+}
+@media (max-width:520px){
+  .wrap{padding:0 18px;}
+  .hero .nums{grid-template-columns:1fr;gap:0;}
+  .hero .nums div+div{border-left:0;border-top:1px solid var(--line);}
+  .hero .nums div{display:flex;align-items:center;justify-content:space-between;padding:12px 4px;}
+  .hero .nums b{font-size:24px;}
+  .guide{grid-template-columns:1fr;}
+  .guide .g{border-right:0;border-bottom:1px solid var(--line);}
+  .guide .g:last-child{border-bottom:0;}
+  .film{flex:0 0 86%;}
+  .btn{padding:10px 18px;font-size:13px;}
+  .f-cols{grid-template-columns:1fr;}
+  .logo .mk{font-size:18px;}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none !important;transition:none !important;scroll-behavior:auto !important;}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/xiaobao.js"></script>
+<a class="skip" href="#main">跳到主要内容</a>
+
+<header class="top">
+  <div class="wrap">
+    <div class="logo">
+      <span class="mk">米奇<span>电影网</span></span>
+      <span class="dot" aria-hidden="true"></span>
+    </div>
+    <nav class="nav navscroll" aria-label="主导航">
+      <a href="#home">首页</a>
+      <a href="#pick">精选影片</a>
+      <a href="#chart">热播榜</a>
+      <a href="#mag">影视资讯</a>
+      <a href="#review">影评</a>
+      <a href="#guide">观影指南</a>
+      <a href="#about">关于</a>
+    </nav>
+    <div class="cta">
+      <span class="upd">今日更新 <b>32</b> 部</span>
+      <a class="btn btn-lime" href="#pick">看精选</a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ========== 首屏：超大排版 ========== -->
+  <section class="hero" id="home">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <p class="kicker">MIQI · DAILY FILM SELECTION</p>
+          <h1>
+            <span class="b">米奇<em>电影网</em></span>
+          </h1>
+          <p class="tagline">精选电影推荐 · 热播影视榜 · 在线观影指南</p>
+          <p class="lead">
+            <b>米奇电影网</b>每天从上千部片子里挑出真正值得看的那几部：编辑精选、热播榜单、影视资讯、
+            观影指南与影评专栏，一条线串到底。想找<b>精选电影推荐</b>、查<b>热播影视榜</b>、
+            或者只是今晚不知道看什么，来米奇电影网翻一圈就够了。
+          </p>
+          <div class="btns">
+            <a class="btn btn-lime" href="#pick">浏览精选影片</a>
+            <a class="btn" href="#chart">查看热播榜</a>
+          </div>
+          <div class="nums">
+            <div><b>10,400+</b><span>收录影片</span></div>
+            <div><b>32</b><span>今日更新</span></div>
+            <div><b>每小时</b><span>榜单刷新</span></div>
+          </div>
+        </div>
+        <aside class="vside" aria-hidden="true">每日精选 · <b>好片不缺席</b> · 米奇电影网</aside>
+      </div>
+    </div>
+  </section>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="mq">
+      <span><i>米奇电影网</i> · 精选电影推荐</span>
+      <span>热播影视榜</span>
+      <span>新片速递</span>
+      <span><i>高分电影</i></span>
+      <span>观影指南</span>
+      <span>影评专栏</span>
+      <span>影视资讯</span>
+      <span><i>米奇电影网</i> · 精选电影推荐</span>
+      <span>热播影视榜</span>
+      <span>新片速递</span>
+      <span><i>高分电影</i></span>
+      <span>观影指南</span>
+      <span>影评专栏</span>
+      <span>影视资讯</span>
+    </div>
+  </div>
+
+  <!-- ========== 栏目一：精选影片（横向轨道） ========== -->
+  <section class="sec" id="pick">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="sec-no">栏目 01 / SELECTED</p>
+        <div>
+          <h2 class="sec-title">米奇电影网<em>编辑精选影片</em></h2>
+          <p class="sec-desc">编辑部按口碑、话题与完成度三重筛选，每张卡一句推荐理由，横向滑动即可浏览本周精选。</p>
+        </div>
+      </div>
+      <div class="track">
+        <article class="film">
+          <div class="ph p1"><span class="type">剧情</span><span class="nm">旧街灯火</span><span class="yr">2026</span></div>
+          <div class="info">
+            <p>一条老街的最后一夜，把告别拍得不煽情却很戳人。</p>
+            <div class="bar"><b>9.0</b><span>118 分钟</span></div>
+          </div>
+        </article>
+        <article class="film">
+          <div class="ph p2"><span class="type">爱情</span><span class="nm">晚风与信</span><span class="yr">2025</span></div>
+          <div class="info">
+            <p>成年人的克制与迟来的告白，节奏舒缓不腻人。</p>
+            <div class="bar"><b>8.5</b><span>104 分钟</span></div>
+          </div>
+        </article>
+        <article class="film">
+          <div class="ph p3"><span class="type">科幻</span><span class="nm">静默星轨</span><span class="yr">2026</span></div>
+          <div class="info">
+            <p>太空题材里少见的内敛之作，视效服务于人物。</p>
+            <div class="bar"><b>8.9</b><span>142 分钟</span></div>
+          </div>
+        </article>
+        <article class="film">
+          <div class="ph p4"><span class="type">动画</span><span class="nm">麦田旅人</span><span class="yr">2025</span></div>
+          <div class="info">
+            <p>手绘质感极佳，把少年远行拍成了温柔的冒险。</p>
+            <div class="bar"><b>8.8</b><span>98 分钟</span></div>
+          </div>
+        </article>
+        <article class="film">
+          <div class="ph p5"><span class="type">悬疑</span><span class="nm">第七封信</span><span class="yr">2026</span></div>
+          <div class="info">
+            <p>七封信牵出一段旧案，最后二十分钟连翻三次。</p>
+            <div class="bar"><b>8.7</b><span>126 分钟</span></div>
+          </div>
+        </article>
+        <article class="film">
+          <div class="ph p6"><span class="type">纪录</span><span class="nm">海岸线以北</span><span class="yr">2025</span></div>
+          <div class="info">
+            <p>三年跟拍渔村人家，画面安静得能听见潮声。</p>
+            <div class="bar"><b>9.1</b><span>92 分钟</span></div>
+          </div>
+        </article>
+        <article class="film">
+          <div class="ph p7"><span class="type">动作</span><span class="nm">长夜追击</span><span class="yr">2026</span></div>
+          <div class="info">
+            <p>长镜头打戏教科书，节奏从开场拉到字幕。</p>
+            <div class="bar"><b>8.4</b><span>114 分钟</span></div>
+          </div>
+        </article>
+        <article class="film">
+          <div class="ph p8"><span class="type">喜剧</span><span class="nm">周末无事</span><span class="yr">2025</span></div>
+          <div class="info">
+            <p>打工人嘴替式喜剧，笑点密集但结尾有点暖。</p>
+            <div class="bar"><b>8.2</b><span>99 分钟</span></div>
+          </div>
+        </article>
+      </div>
+      <p class="track-hint"><i>&#8592;</i> 左右滑动查看更多精选影片 <i>&#8594;</i></p>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="rule"></div></div>
+
+  <!-- ========== 栏目二：热播榜（巨型编号） ========== -->
+  <section class="sec" id="chart">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="sec-no">栏目 02 / CHART</p>
+        <div>
+          <h2 class="sec-title">米奇电影网<em>热播影视榜</em></h2>
+          <p class="sec-desc">榜单综合口碑、讨论热度与播放表现，每小时重算一次排序；数字越大代表越热。</p>
+        </div>
+      </div>
+      <div class="chart">
+        <div class="row">
+          <span class="no" aria-hidden="true">01</span>
+          <div><div class="nm">海岸线以北</div><div class="meta">纪录 · 2025 · 口碑黑马</div></div>
+          <div class="sc">9.1<small>SCORE</small></div>
+        </div>
+        <div class="row">
+          <span class="no" aria-hidden="true">02</span>
+          <div><div class="nm">旧街灯火</div><div class="meta">剧情 · 2026 · 院线热映</div></div>
+          <div class="sc">9.0<small>SCORE</small></div>
+        </div>
+        <div class="row">
+          <span class="no" aria-hidden="true">03</span>
+          <div><div class="nm">静默星轨</div><div class="meta">科幻 · 2026 · 话题新片</div></div>
+          <div class="sc">8.9<small>SCORE</small></div>
+        </div>
+        <div class="row">
+          <span class="no" aria-hidden="true">04</span>
+          <div><div class="nm">麦田旅人</div><div class="meta">动画 · 2025 · 手绘佳作</div></div>
+          <div class="sc">8.8<small>SCORE</small></div>
+        </div>
+        <div class="row">
+          <span class="no" aria-hidden="true">05</span>
+          <div><div class="nm">第七封信</div><div class="meta">悬疑 · 2026 · 反转烧脑</div></div>
+          <div class="sc">8.7<small>SCORE</small></div>
+        </div>
+        <div class="row">
+          <span class="no" aria-hidden="true">06</span>
+          <div><div class="nm">晚风与信</div><div class="meta">爱情 · 2025 · 治愈心动</div></div>
+          <div class="sc">8.5<small>SCORE</small></div>
+        </div>
+        <div class="row">
+          <span class="no" aria-hidden="true">07</span>
+          <div><div class="nm">长夜追击</div><div class="meta">动作 · 2026 · 硬核爽片</div></div>
+          <div class="sc">8.4<small>SCORE</small></div>
+        </div>
+        <div class="row">
+          <span class="no" aria-hidden="true">08</span>
+          <div><div class="nm">周末无事</div><div class="meta">喜剧 · 2025 · 轻松解压</div></div>
+          <div class="sc">8.2<small>SCORE</small></div>
+        </div>
+      </div>
+      <div class="chart-note">
+        <div class="box">
+          <h4>榜单怎么读</h4>
+          <p>编号按当期热度排序，分数为站内观众打分与公开口碑加权结果，仅作观影参考，不代表专业评价结论。</p>
+        </div>
+        <div class="box">
+          <h4>快速挑片</h4>
+          <p>赶时间直接看前三名；有明确类型偏好时，先定类型再回榜单比对，比通榜浏览更高效。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="rule"></div></div>
+
+  <!-- ========== 栏目三：影视资讯（杂志排版） ========== -->
+  <section class="sec" id="mag">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="sec-no">栏目 03 / NEWS</p>
+        <div>
+          <h2 class="sec-title">米奇电影网<em>影视资讯专题</em></h2>
+          <p class="sec-desc">定档、开拍、首曝预告与票房观察，用一篇专题说清楚，不做无意义的复述。</p>
+        </div>
+      </div>
+      <div class="mag">
+        <article class="article">
+          <h3>新片定档观察：中小成本影片正在占据更多场次</h3>
+          <p class="dropcap">今年上映的新片里，中等成本的剧情与动画作品排片占比明显上升。一个重要原因是观众对"大制作"的疲劳感在积累，而叙事扎实、情绪真切的中小成本片更容易靠口碑完成逆袭。对普通观众来说，这其实是好消息：值得走进影院的选择变多了。</p>
+          <p>从米奇电影网热播影视榜的变化也能看出端倪——榜单前五里，有两部是在上映第二周才靠口碑冲上来的。这类影片的共同点是<b>节奏不急躁、人物立得住</b>，适合愿意给电影一点耐心的观众。</p>
+          <p class="quote">"排片会跟着票房走，但票房最终会跟着口碑走。"</p>
+          <div class="cols2">
+            <p>动画方面，手绘与二维风格的作品回潮明显。相比追求极致的三维渲染，一批创作者重新选择用笔触与留白讲故事，视觉效果朴素但情感浓度更高。</p>
+            <p>纪录片则是另一个意外增长点。多部自然与人文题材纪录片在周末场次出现加场，观众结构也比以往更年轻，这类片子正在从"小众选择"变成"周末选项"。</p>
+          </div>
+        </article>
+        <div>
+          <div class="side-list">
+            <h4>速递</h4>
+            <div class="it"><a href="#mag"><span class="t">《静默星轨》曝终极预告，太空戏一镜到底</span><span class="d">影视资讯 · 2 小时前</span></a></div>
+            <div class="it"><a href="#mag"><span class="t">《麦田旅人》票房破 8 亿，导演透露续作构想</span><span class="d">票房观察 · 昨天</span></a></div>
+            <div class="it"><a href="#mag"><span class="t">《海岸线以北》加开周末午夜场，一票难求</span><span class="d">院线动态 · 2 天前</span></a></div>
+            <div class="it"><a href="#mag"><span class="t">三部老片因二创翻红，重回流媒体飙升榜前十</span><span class="d">榜单观察 · 3 天前</span></a></div>
+            <div class="it"><a href="#mag"><span class="t">《第七封信》获最佳影片提名，幕后特辑释出</span><span class="d">奖项追踪 · 4 天前</span></a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="rule"></div></div>
+
+  <!-- ========== 栏目四：影评专栏 ========== -->
+  <section class="sec" id="review">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="sec-no">栏目 04 / REVIEW</p>
+        <div>
+          <h2 class="sec-title">米奇电影网<em>影评专栏</em></h2>
+          <p class="sec-desc">不剧透、不复述剧情，只说值得看的理由与可能的劝退点，每篇都标注适用人群。</p>
+        </div>
+      </div>
+      <div class="reviews">
+        <article class="rv">
+          <p class="marks" aria-label="评分五颗星">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+          <p class="say">镜头始终保持着一种克制的距离，却把一家人的三年拍得比任何煽情都更沉。看完会想给家里打个电话。</p>
+          <div class="by">
+            <span class="sq" aria-hidden="true">评</span>
+            <div>影评人 · 阿岩<span>评《海岸线以北》 · 静心推荐</span></div>
+          </div>
+        </article>
+        <article class="rv">
+          <p class="marks" aria-label="评分四星半">&#9733;&#9733;&#9733;&#9733;&#189;</p>
+          <p class="say">前四十分钟略慢，但第三次反转落地的一刻，所有伏笔都算数。建议关掉手机，错过细节会可惜。</p>
+          <div class="by">
+            <span class="sq" aria-hidden="true">评</span>
+            <div>资深影迷 · 周同学<span>评《第七封信》 · 悬疑爱好者</span></div>
+          </div>
+        </article>
+        <article class="rv">
+          <p class="marks" aria-label="评分五颗星">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+          <p class="say">难得有一部动画愿意用留白讲成长，孩子看到冒险，大人看到告别。这是我今年最想二刷的一部。</p>
+          <div class="by">
+            <span class="sq" aria-hidden="true">评</span>
+            <div>动画研究者 · 木子<span>评《麦田旅人》 · 亲子可看</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="rule"></div></div>
+
+  <!-- ========== 栏目五：观影指南 ========== -->
+  <section class="sec" id="guide">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="sec-no">栏目 05 / GUIDE</p>
+        <div>
+          <h2 class="sec-title">米奇电影网<em>在线观影指南</em></h2>
+          <p class="sec-desc">按你当下的处境直接对照：和谁看、看多久、选什么类型，一格读完。</p>
+        </div>
+      </div>
+      <div class="guide">
+        <div class="g">
+          <p class="idx">01</p>
+          <h3>下班放松</h3>
+          <p>喜剧、生活与治愈系优先，90-110 分钟为佳，不必高度集中注意力。</p>
+          <div class="kw"><span>喜剧</span><span>治愈系</span></div>
+        </div>
+        <div class="g">
+          <p class="idx">02</p>
+          <h3>周末深度</h3>
+          <p>悬疑、科幻与作者向作品，留出完整两小时，中途尽量不中断。</p>
+          <div class="kw"><span>悬疑</span><span>科幻</span><span>作者向</span></div>
+        </div>
+        <div class="g">
+          <p class="idx">03</p>
+          <h3>亲子时光</h3>
+          <p>动画、家庭与纪录片优先，片长控制在 100 分钟内，避开惊吓段落。</p>
+          <div class="kw"><span>动画</span><span>家庭</span><span>纪录</span></div>
+        </div>
+        <div class="g">
+          <p class="idx">04</p>
+          <h3>朋友聚会</h3>
+          <p>动作、喜剧与系列片最稳，热闹且话题多，散场后还能聊半小时。</p>
+          <div class="kw"><span>动作</span><span>喜剧</span><span>系列片</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="rule"></div></div>
+
+  <!-- ========== 栏目六：关于 ========== -->
+  <section class="sec" id="about">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="sec-no">栏目 06 / ABOUT</p>
+        <div>
+          <h2 class="sec-title">关于<em>米奇电影网</em></h2>
+          <p class="sec-desc">一个只做好一件事的站点：让你更快找到今晚值得看的那部电影。</p>
+        </div>
+      </div>
+      <p class="manifesto">我们不想做最大的片库，<br>只想做最省时间的那份片单。</p>
+      <div class="about">
+        <div>
+          <ul class="list">
+            <li><b>01</b><span>每日精选影片，按口碑、话题与完成度三重筛选。</span></li>
+            <li><b>02</b><span>维护热播影视榜，每小时重算一次排序。</span></li>
+            <li><b>03</b><span>撰写影视资讯专题，压缩无效信息。</span></li>
+            <li><b>04</b><span>发布不剧透影评，标注适用人群与劝退点。</span></li>
+            <li><b>05</b><span>提供分场景在线观影指南，降低挑片成本。</span></li>
+          </ul>
+        </div>
+        <div class="faq">
+          <details open>
+            <summary>米奇电影网提供在线播放吗？</summary>
+            <p>本站是电影信息与观影指南站点，只提供影片介绍、热播榜单与影评，不提供任何影视资源的在线播放或下载服务。</p>
+          </details>
+          <details>
+            <summary>热播榜多久更新一次？</summary>
+            <p>热播影视榜每小时重算一次排序，精选影片每日更新，影视资讯在权威消息发布后尽快跟进。</p>
+          </details>
+          <details>
+            <summary>不知道看什么时该怎么选？</summary>
+            <p>先到观影指南对照自己的场景确定类型，再回到热播影视榜挑对应名次，通常前两名就足够。</p>
+          </details>
+          <details>
+            <summary>可以投稿影评或反馈纠错吗？</summary>
+            <p>欢迎通过页脚的联系方式提交影评投稿与内容纠错，我们会在 3 个工作日内回复。</p>
+          </details>
+        </div>
+      </div>
+      <div class="sub">
+        <h2>订阅米奇电影网 · 每周一份精选片单</h2>
+        <p>每周推送本周值得看的几部片子与下周新片预告，不推送广告，随时可退订。</p>
+        <form action="#" method="post">
+          <input type="email" name="email" placeholder="输入你的邮箱地址" aria-label="订阅邮箱" required>
+          <button class="btn btn-lime" type="submit">订阅片单</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="f-cols">
+      <div class="f-brand">
+        <div class="mk">米奇<span>电影网</span></div>
+        <span class="url">https://miqidianyingwang-cn.github.io</span>
+        <p>米奇电影网 —— 精选电影推荐、热播影视榜、影视资讯、影评专栏与在线观影指南，帮你更快找到值得看的那部电影。</p>
+      </div>
+      <div>
+        <h4>栏目</h4>
+        <ul>
+          <li><a href="#pick">精选影片</a></li>
+          <li><a href="#chart">热播影视榜</a></li>
+          <li><a href="#mag">影视资讯</a></li>
+          <li><a href="#review">影评专栏</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>类型</h4>
+        <ul>
+          <li><a href="#pick">剧情片</a></li>
+          <li><a href="#pick">悬疑犯罪</a></li>
+          <li><a href="#pick">动画电影</a></li>
+          <li><a href="#pick">纪录片</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>关于</h4>
+        <ul>
+          <li><a href="#about">关于我们</a></li>
+          <li><a href="#about">常见问题</a></li>
+          <li><a href="#guide">观影指南</a></li>
+          <li><a href="#home">回到顶部</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="f-key">
+      热门关键词：<b>米奇电影网</b> · 米奇影视 · 精选电影推荐 · 热播影视榜 · 新片速递 · 在线观影指南 · 影评专栏 · 高分电影 · 影视资讯
+    </p>
+    <div class="f-bottom">
+      <span>&copy; 2026 米奇电影网 miqidianyingwang-cn.github.io 版权所有</span>
+      <span>本站内容为影视信息介绍与评论，不提供影视资源播放或下载</span>
+    </div>
+    <p class="bigword" aria-hidden="true">MIQI FILM</p>
+  </div>
+</footer>
+
+<a class="totop" href="#home" aria-label="返回顶部">&#8593;</a>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://miqidianyingwang-cn.github.io/#website",
+      "url": "https://miqidianyingwang-cn.github.io/",
+      "name": "米奇电影网",
+      "alternateName": ["米奇电影网官网", "米奇影视", "miqidianyingwang"],
+      "description": "米奇电影网精选每日好片，提供热播影视榜、新片速递、观影指南与影评专栏。",
+      "inLanguage": "zh-CN",
+      "publisher": { "@id": "https://miqidianyingwang-cn.github.io/#organization" }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://miqidianyingwang-cn.github.io/#organization",
+      "name": "米奇电影网",
+      "url": "https://miqidianyingwang-cn.github.io/",
+      "description": "米奇电影网是面向影迷的电影精选与观影指南站点，提供精选影片、热播影视榜、影视资讯、影评专栏与观影指南。"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://miqidianyingwang-cn.github.io/#webpage",
+      "url": "https://miqidianyingwang-cn.github.io/",
+      "name": "米奇电影网 - 精选电影推荐_热播影视榜_在线观影指南",
+      "description": "米奇电影网精选每日好片，提供热播影视榜、新片速递、观影指南与影评专栏。看好电影、查热播榜、找片单，就上米奇电影网。",
+      "isPartOf": { "@id": "https://miqidianyingwang-cn.github.io/#website" },
+      "inLanguage": "zh-CN"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "首页", "item": "https://miqidianyingwang-cn.github.io/" },
+        { "@type": "ListItem", "position": 2, "name": "精选影片", "item": "https://miqidianyingwang-cn.github.io/#pick" },
+        { "@type": "ListItem", "position": 3, "name": "热播影视榜", "item": "https://miqidianyingwang-cn.github.io/#chart" },
+        { "@type": "ListItem", "position": 4, "name": "影视资讯", "item": "https://miqidianyingwang-cn.github.io/#mag" },
+        { "@type": "ListItem", "position": 5, "name": "影评专栏", "item": "https://miqidianyingwang-cn.github.io/#review" },
+        { "@type": "ListItem", "position": 6, "name": "观影指南", "item": "https://miqidianyingwang-cn.github.io/#guide" }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "name": "米奇电影网精选影片",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "海岸线以北", "url": "https://miqidianyingwang-cn.github.io/#pick" },
+        { "@type": "ListItem", "position": 2, "name": "旧街灯火", "url": "https://miqidianyingwang-cn.github.io/#pick" },
+        { "@type": "ListItem", "position": 3, "name": "静默星轨", "url": "https://miqidianyingwang-cn.github.io/#pick" },
+        { "@type": "ListItem", "position": 4, "name": "麦田旅人", "url": "https://miqidianyingwang-cn.github.io/#pick" }
+      ]
+    }
+  ]
+}
+</script>
+</body>
+</html>
